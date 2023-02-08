@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Slide from "./Components/Slide";
+import catGlasses from "./img/cat-glasses.jpg";
+import catButterfly from "./img/cat-butterfly.jpg";
+import catGreen from "./img/cat-green.jpg";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const slides = [
+    {
+      id: "slide1",
+      image: catGlasses,
+    },
+    {
+      id: "slide2",
+      image: catButterfly,
+    },
+    {
+      id: "slide3",
+      image: catGreen,
+    },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Slide slides={slides} />
     </div>
   );
-}
+};
 
 export default App;
